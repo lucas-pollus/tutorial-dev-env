@@ -47,7 +47,9 @@ Descompacte os arquivos, clique com botão direito e instalar.
 
 Na loja de aplicativos do Windows, busque pelo Windows Terminal e o instale.
 
-Copie o conteúdo do arquivo win-terminal-settings.json para o settings.json do windows terminal.
+Com terminal aberto, abra as configurações > e abra o arquivo settings.json.
+
+Copie o conteúdo do arquivo [win-terminal-settings.json](win-terminal-settings.json) para o settings.json do windows terminal.
 
 ## Criando um usuário no Linux
 
