@@ -115,7 +115,8 @@ $ source .zshrc
 
 Edite o .zshrc e adicione seus alias (atalhos) preferidos. Ex
 
-```alias dev="cd ~/Development"
+```
+alias dev="cd ~/Development"
 ```
 
 ## Chaves SSH Github
