@@ -15,6 +15,7 @@ O tutorial abaixo tem por objetivo auxilar a criação de um ambiente completo d
 - [Google Chrome](#google-chrome)
 - [Postman](#postman)
 - [.NET SDK](#net-sdk)
+- [Docker](#docker)
 
 
 ## WSL2
@@ -266,6 +267,7 @@ $ sudo tar -xvzf postman-linux-x64.tar.gz -C /opt
 ## .NET SDK
 
 Para instalar o .NET SDK é importante saber qual versão do Ubuntu está sendo utilizada e seguir o passo a passo da documentação da Microsoft. Ex da versão Ubuntu 20.04:
+Para obter passo a passo da versão mais recente consulte a [documentação oficial](https://dotnet.microsoft.com) do dotnet.
 
 Adicione o repo:
 
@@ -284,11 +286,35 @@ sudo apt-get update; \
   sudo apt-get install -y dotnet-sdk-5.0
 ```
 
-Instale o runtime do ASP.NET Core:
+## Docker
+
+Para utilizar o docker dentro do WSL2 será necessário seguir os passos abaixo:
+
+
+```sh
+curl -sSL get.docker.com | sh
+```
+
+Depois adicione seu usuario do WSL2 no grupo docker
+
+```sh
+sudo usermod $USER -aG docker
+```
+
+Edite o arquivo `/etc/wsl.conf` e inclua o docker para ser iniciado automaticamente
 
 ```
-sudo apt-get update; \
-  sudo apt-get install -y apt-transport-https && \
-  sudo apt-get update && \
-  sudo apt-get install -y aspnetcore-runtime-5.0
+[boot]
+command="service docker start"
+```
+
+No CMD do Windows reinicie o WSL2
+```sh
+wsl --shutdown
+```
+
+Execute um container de testes para validar a instalação
+
+```sh
+docker run hello-world
 ```
