@@ -214,6 +214,15 @@ export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}
 export LIBGL_ALWAYS_INDIRECT=1
 ```
 
+Documentar o WSLg
+
+Fix teclado no WSLg:
+
+```
+WAYLAND_DISPLAY=“wayland-1”
+setxkbmap -model abnt2 -layout br -variant abnt2
+WAYLAND_DISPLAY=“wayland-1”
+```
 ## Google Chrome
 
 Para instalar o Google Chrome no Linux (WSL), execute os passos abaixo:
